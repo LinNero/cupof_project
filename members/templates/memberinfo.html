@@ -18,9 +18,7 @@
             {% for t in members_table %}
             <tr>
                 {% for k,v in t.items %}
-                    {% if k == "image" and v %}
-                        <td><image src="/media/{{v}}" height="100px" width="100px"></image></td>
-                    {% elif k == "password" %}
+                    {% if k == "password" %}
                         <td>******</td>
                     {% else %}
                         <td>{{v}}</td>
