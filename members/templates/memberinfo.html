@@ -1,0 +1,34 @@
+{% extends 'tea/teapage.html' %}
+{% block title %}
+    Club "Cup of: Coffee"
+{% endblock title %}
+{% block content %}
+    <h2>Здесь вы можете найти всю информацю об участниках.</h2>
+
+    <p><i>
+        <b>Участники</b> — любители чая или кофе.
+    </i></p>
+    {% if titles %}
+        <table border="2">
+            <tr>
+                {% for t in titles %}
+                    <th>{{t}}</th>
+                {% endfor %}
+            </tr>
+            {% for t in members_table %}
+            <tr>
+                {% for k,v in t.items %}
+                    {% if k == "image" and v %}
+                        <td><image src="/media/{{v}}" height="100px" width="100px"></image></td>
+                    {% elif k == "password" %}
+                        <td>******</td>
+                    {% else %}
+                        <td>{{v}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <a href="/members/register">Зарегистрировать нового участинка</a>
+{% endblock content %}

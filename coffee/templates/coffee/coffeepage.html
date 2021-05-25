@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        Base for coffee app
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <header>КЛУБ ЛЮБИТЕЛЕЙ ГОРЯЧЕЙ ЧАШЕЧКИ КОФЕ</header>
+    <nav><a href="{% url 'landhere' %}">НА ГЛАВНУЮ</a></nav>
+    <article>
+        {% block content %}
+        page content
+        {% endblock content %}
+    </article>
+    <aside>
+        {% block side %}
+        page cartoon
+        {% endblock side %}
+    </aside>
+    <footer>
+        <a href="https://www.bbc.com/russian/science/2016/01/160129_vert_fut_tea_vs_coffee">Чай или кофе – что полезней для нашего организма?</a>
+    </footer>
+</body>
+</html>

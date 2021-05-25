@@ -1,0 +1,33 @@
+{% extends 'tea/teapage.html' %}
+{% load static %}
+{% block title %}
+    Club "Cup of: Tea"
+{% endblock title %}
+{% block content %}
+    <h2>Здесь вы можете найти всю информацю о чае.</h2>
+
+    <p><i>
+        <b> Чай</b> - это высушенные и особо обработанные листья некоторых культивируемых вечнозелёных растений, на которых
+        настаивается <b>горячий напиток</b>.
+    </i></p>
+    {% if titles %}
+        <table border="2">
+            <tr>
+                {% for t in titles %}
+                    <th>{{t}}</th>
+                {% endfor %}
+            </tr>
+            {% for t in tea_table %}
+            <tr>
+                {% for k,v in t.items %}
+                    {% if k == "image" and v %}
+                        <td><image src="/media/{{v}}" height="100px" width="100px"></image></td>
+                    {% else %}
+                        <td>{{v}}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock content %}

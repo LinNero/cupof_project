@@ -1,0 +1,20 @@
+{% extends 'landing.html' %}
+{% block title %}
+    Club "Cup of:"
+{% endblock title %}
+{% block content %}
+    <h1>Добро пожаловать любителям чашеки горячего!</h1>
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'tea' %}">Всё про чай</a>
+            </td>
+            <td>
+                <a href="{% url 'coffee' %}">Все про кофе</a>
+            </td>
+        </tr>
+    </table>
+    <p>
+        <a href="{% url 'members' %}">Список участников клуба "Cup of"</a>
+    </p>
+{% endblock content %}
